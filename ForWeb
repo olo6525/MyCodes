@@ -1,0 +1,36 @@
+
+//javascript
+function topmenufix (menu){
+    const header = document.querySelector('header');
+    const headerheight = header.clientHeight;
+  document.addEventListener('scroll', onScroll, { passive: true });
+   function onScroll () {
+       const scrollposition = pageYOffset;
+     const menufix = document.getElementById(menu);
+     if (headerheight<=scrollposition){
+       menufix.classList.add('fix')
+     }
+     else {
+       menufix.classList.remove('fix');
+     }
+   } 
+    
+}
+
+//css
+
+.fix {
+  display: block !important;
+  position:fixed !important;
+  width:56.5% !important;
+  top: 0;
+  z-index: 100;
+}
+@media (max-width:800px){
+  .fix {
+    position:fixed;
+    width: 95.5%  !important;
+    top:0;
+    z-index: 100;
+  }
+}
